@@ -1,0 +1,18 @@
+#!/bin/bash
+set -e -u -x -o pipefail
+cat >~/.local/share/applications/skypeforlinux-unsnap.desktop <<HERE
+[Desktop Entry]
+Name=Skype (unsnap)
+Comment=Skype Internet Telephony (unsnap)
+Exec=./02-run
+Path=$PWD
+Icon=$PWD/fs/meta/gui/skypeforlinux.png
+Terminal=false
+Type=Application
+StartupNotify=true
+StartupWMClass=Skype
+Encoding=UTF-8
+Categories=Network;Application;
+MimeType=x-scheme-handler/skype;x-scheme-handler/tel;x-scheme-handler/callto;
+X-KDE-Protocols=skype,tel,callto
+HERE

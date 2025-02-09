@@ -1,0 +1,4 @@
+#!/bin/bash
+set -e -u -x -o pipefail
+rm -rf fs
+unsquashfs -d fs skype.snap

@@ -1,0 +1,6 @@
+#!/bin/bash
+set -e -u -x -o pipefail
+# https://api.snapcraft.io/docs/info.html
+url=$(curl -H "Snap-Device-Series: 16" "https://api.snapcraft.io/v2/snaps/info/skype" |
+	jq -r '."channel-map"[] | select(.channel.architecture == "amd64" and .channel.name == "stable") | .download.url')
+curl -o skype.snap -L "$url"

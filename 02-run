@@ -1,0 +1,3 @@
+#!/bin/bash
+set -e -u -x -o pipefail
+fs/usr/share/skypeforlinux/skypeforlinux
